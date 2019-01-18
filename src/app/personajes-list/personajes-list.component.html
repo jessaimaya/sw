@@ -1,0 +1,26 @@
+<app-loader *ngIf="loading"></app-loader>
+<div *ngIf="!loading" nz-row nzGutter="16">
+  <ul class="list">
+    <li *ngFor="let personaje of personajes.results | orderBy: orden:false:'case-insensitive':customComparator" class="list-item" nz-col nzXs="24" nzSm="12" nzMd="8" nzLg="6"
+      nzXl="6">
+      <a routerLink="/personaje/{{ personaje.nombre }}" routerLinkActive="active">
+        <nz-card [nzLoading]="loading">
+          <nz-card-meta [nzAvatar]="avatarTemplate" nzTitle="{{ personaje.nombre }}"></nz-card-meta>
+          <ul class="caracteristicas">
+            <li><strong>Altura: </strong>{{ personaje.altura }}</li>
+            <li><strong>Peso: </strong>{{ personaje.peso }}</li>
+            <li><strong>Color cabello: </strong>{{ personaje.color_cabello }}</li>
+            <li><strong>Color piel: </strong>{{ personaje.color_piel }}</li>
+            <li><strong>Color ojos: </strong>{{ personaje.color_ojos }}</li>
+            <li><strong>Nacimiento: </strong>{{ personaje.fecha_nacimiento }}</li>
+            <li><strong>Género: </strong>{{ personaje.genero }}</li>
+            <li><strong>Planeta: </strong>{{ personaje.mundo }}</li>
+          </ul>
+        </nz-card>
+        <ng-template #avatarTemplate>
+          <nz-avatar nzIcon="user"></nz-avatar>
+        </ng-template>
+      </a>
+    </li>
+  </ul>
+</div>

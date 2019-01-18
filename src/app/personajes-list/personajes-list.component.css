@@ -1,0 +1,11 @@
+.list {
+    list-style: none;
+}
+.list-item {
+    margin: 0.5rem 0;
+    box-sizing: border-box;
+}
+.caracteristicas {
+    display: block;
+    margin: 0.5rem auto;
+}

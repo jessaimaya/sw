@@ -1,0 +1,19 @@
+<app-loader *ngIf="loading"></app-loader>
+<div *ngIf="!loading" nz-row nzGutter="16">
+  <nz-card [nzLoading]="loading">
+    <nz-card-meta [nzAvatar]="avatarTemplate" nzTitle="{{ personajes.results[0].name }}"></nz-card-meta>
+    <ul class="caracteristicas">
+      <li><strong>Altura: </strong>{{ personajes.results[0].height }}</li>
+      <li><strong>Peso: </strong>{{ personajes.results[0].mass }}</li>
+      <li><strong>Color cabello: </strong>{{ personajes.results[0].hair_color }}</li>
+      <li><strong>Color piel: </strong>{{ personajes.results[0].skin_color }}</li>
+      <li><strong>Color ojos: </strong>{{ personajes.results[0].eye_color }}</li>
+      <li><strong>Nacimiento: </strong>{{ personajes.results[0].birth_year }}</li>
+      <li><strong>Género: </strong>{{ personajes.results[0].gender }}</li>
+      <li><strong>Planeta: </strong>{{ personajes.results[0].homeworld }}</li>
+    </ul>
+  </nz-card>
+  <ng-template #avatarTemplate>
+    <nz-avatar nzIcon="user"></nz-avatar>
+  </ng-template> 
+</div>
